@@ -17,6 +17,7 @@ Small desktop tools for developers and vibe coders who run AI on Linux. Each one
 | **[Permitt](https://github.com/blackberrylabs/permitt)** | inspect | What each AI assistant may do without asking — run commands, edit files, reach the network, call MCP tools — and which setting, in which file, says so. 16 hosts. Shell start-up files checked for bypass flags. |
 | **[MCProster](https://github.com/blackberrylabs/mcproster)** | inventory | Every MCP server declared on the machine, once, with the hosts and files that declare it — duplicates, secrets in clear, missing commands, skipped confirmations, what each server costs in the model's context. |
 | **[Cleanator](https://github.com/blackberrylabs/cleanator)** | clean | What AI tooling left on the disk — model stores, caches, build outputs, abandoned environments — and what could go, as a script you read and run yourself. Never deletes anything. |
+| **[Linstruct](https://github.com/blackberrylabs/linstruct)** | lint | Your AI instruction files — CLAUDE.md, AGENTS.md, .cursor/rules, copilot instructions, GEMINI.md… — as each agent will actually read them: what it cuts past its budget, what it never reads, what another file shadows, what costs context twice. 19 hosts, every rule sourced. |
 
 ## The promises, the same for every tool
 
