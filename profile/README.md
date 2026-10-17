@@ -13,6 +13,7 @@ Small desktop tools for developers and vibe coders who run AI on Linux. Each one
 | **[Cleanator](https://github.com/blackberrylabs/cleanator)** | clean | What AI tooling left on the disk — model stores, caches, build outputs, abandoned environments — and what could go, as a command you read and run yourself. Never deletes anything. |
 | **[Linstruct](https://github.com/blackberrylabs/linstruct)** | lint | Your AI instruction files — CLAUDE.md, AGENTS.md, .cursor/rules, copilot instructions, GEMINI.md… — as each agent will actually read them: what it cuts past its budget, what it never reads, what another file shadows, what costs context twice. 19 hosts, every rule sourced. |
 | **[Billfold](https://github.com/blackberrylabs/billfold)** | tally | The accounts the machine is wired to and how each pays, the provider keys it holds and who can read them, the tokens each host burned in the last 30 days — priced at API rates from an embedded snapshot, never fetched. 21 hosts, 22 providers. |
+| **[Lastrun](https://github.com/blackberrylabs/lastrun)** | replay | What your AI agents actually did on the machine, session by session — commands run, files created, edited and deleted, packages installed, refusals — read back from the transcripts the hosts already write, never their text. 21 hosts, every rule sourced. |
 
 ## Several of them: the control tower
 
