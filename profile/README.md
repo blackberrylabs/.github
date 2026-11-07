@@ -20,7 +20,7 @@ One program, six modules, one install. BrambleRS reads the configuration, instru
 ## The promises
 
 - **Read-only.** The only writes are its own settings under `~/.config/bramblers/`, the saved reports and the cleanup script Cleanator offers to save under `~/.local/state/bramblers/`.
-- **No network.** Nothing leaves the machine; links are shown, never followed.
+- **No network of its own.** Nothing is sent anywhere; a link opens in your browser only when you click it.
 - **Secrets masked** the moment they are read.
 - **Actions shown, never run.** Each finding says what you could do; you do it.
 - **Every rule sourced.** The documentation sentence, the source line, or the observation behind each claim is in the module.
