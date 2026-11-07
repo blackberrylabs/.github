@@ -1,36 +1,34 @@
 # Blackberrylabs
 
-**Read-only tools that show what AI coding agents do to your machine — and one screen that gathers them.**
+**BrambleRS shows what AI coding agents do to a Linux machine, most serious first, on one screen. Read-only.**
 
-Small desktop tools for developers and vibe coders who run AI on Linux. Each one answers one question about your machine, shows its evidence, and never acts in your place — you read, you decide, you act with the host's own settings or a command you have read. **Want one of them? Install it, it is complete on its own. Want several? Install the control tower, then pick the modules you need.**
+One program, six modules, one install. BrambleRS reads the configuration, instruction files, transcripts and caches the agents already leave, merges their findings, and writes only its own settings and saved reports.
 
-## The modules
+[Install BrambleRS](https://github.com/blackberrylabs/BrambleRS/releases) with the `.deb`, `.rpm` or AppImage for x86_64 Linux.
 
-| | Verb | What it answers |
-|---|---|---|
-| **[Permitt](https://github.com/blackberrylabs/permitt)** | inspect | What each AI assistant may do without asking — run commands, edit files, reach the network, call MCP tools — and which setting, in which file, says so. 16 hosts. Shell start-up files checked for bypass flags. |
-| **[MCProster](https://github.com/blackberrylabs/mcproster)** | inventory | Every MCP server declared on the machine, once, with the hosts and files that declare it — duplicates, secrets in clear, missing commands, skipped confirmations, what each server costs in the model's context. |
-| **[Cleanator](https://github.com/blackberrylabs/cleanator)** | clean | What AI tooling left on the disk — model stores, caches, build outputs, abandoned environments — and what could go, as a command you read and run yourself. Never deletes anything. |
-| **[Linstruct](https://github.com/blackberrylabs/linstruct)** | lint | Your AI instruction files — CLAUDE.md, AGENTS.md, .cursor/rules, copilot instructions, GEMINI.md… — as each agent will actually read them: what it cuts past its budget, what it never reads, what another file shadows, what costs context twice. 19 hosts, every rule sourced. |
-| **[Billfold](https://github.com/blackberrylabs/billfold)** | tally | The accounts the machine is wired to and how each pays, the provider keys it holds and who can read them, the tokens each host burned in the last 30 days — priced at API rates from an embedded snapshot, never fetched. 21 hosts, 22 providers. |
-| **[Lastrun](https://github.com/blackberrylabs/lastrun)** | replay | What your AI agents actually did on the machine, session by session — commands run, files created, edited and deleted, packages installed, refusals — read back from the transcripts the hosts already write, never their text. 21 hosts, every rule sourced. |
+## The six modules
 
-## Several of them: the control tower
+| Module | Question |
+|---|---|
+| **Permitt** | What each AI assistant may do without asking, and which setting says so |
+| **MCProster** | Which MCP servers are declared, once per server, with duplicates, clear secrets and dead commands |
+| **Linstruct** | Which instruction files each host would load, in which order, and what it would drop |
+| **Cleanator** | What AI tooling left on the disk, and what could go |
+| **Billfold** | Which accounts and keys this machine holds, and how many tokens each host burned |
+| **Lastrun** | What the agents actually ran, created, edited or deleted, session by session |
 
-**[Blackberrylabs](https://github.com/blackberrylabs/blackberrylabs)** — one screen that says what is wrong on your machine on the AI side, most serious first — *act now · review · good to know · information* — with every module's findings in one list. It works with any subset of the modules and shows the others as available.
+## The promises
 
-[Get it](https://github.com/blackberrylabs/blackberrylabs/releases) — `.deb`, `.rpm`, AppImage.
-
-## The promises, the same for every tool
-
-- **Read-only.** No file is written outside the tool's own preferences (and, for the tower, its saved reports).
+- **Read-only.** No file is written outside `~/.config/bramblers/settings.json` and the saved reports in `~/.local/state/bramblers/`.
 - **No network.** Nothing leaves the machine; links are shown, never followed.
 - **Secrets masked** the moment they are read.
 - **Actions shown, never run.** Each finding says what you could do; you do it.
-- **Every rule sourced.** The documentation sentence, the source line, or the observation behind each claim is in the tool.
+- **Every rule sourced.** The documentation sentence, the source line, or the observation behind each claim is in the module.
 
 ## Under the hood
 
-Three shared crates, all Rust, all MIT: **[bbl-hostrules](https://github.com/blackberrylabs/bbl-hostrules)** (where each AI assistant keeps its files, how to read them without writing), **[bbl-ui](https://github.com/blackberrylabs/bbl-ui)** (the shared face), **[bbl-report](https://github.com/blackberrylabs/bbl-report)** (the contract between the tower and its modules). Adding a module to the family = a binary that answers `report` and one declarative sheet in the tower; start from the [template](https://github.com/blackberrylabs/template).
+One Rust workspace, MIT: `bramblers-core`, `bramblers-report`, `bramblers-hostrules`, `bramblers-ui`, the iced app and six module cores. The source is [blackberrylabs/BrambleRS](https://github.com/blackberrylabs/BrambleRS).
 
-By [Alexandre Do](https://github.com/Nimeria2026). Issues and rules welcome in each repository.
+The old tower, the six module repositories, the three foundation crates and the template are archived. Their releases stay downloadable.
+
+By [Alexandre Do](https://github.com/Nimeria2026). Issues and rules are welcome in the BrambleRS repository.

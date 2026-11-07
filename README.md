@@ -1,33 +1,34 @@
 # Blackberrylabs
 
-**Everything your AI agents do to your machine, on one screen. Read-only, like the tools behind it.**
+**BrambleRS shows what AI coding agents do to a Linux machine, most serious first, on one screen. Read-only.**
 
-Small desktop tools for developers and vibe coders who run AI on Linux. Each one answers one question about your machine, shows its evidence, and never acts in your place — you read, you decide, you act with the host's own settings or a script you have read. The control tower gathers them.
+One program, six modules, one install. BrambleRS reads the configuration, instruction files, transcripts and caches the agents already leave, merges their findings, and writes only its own settings and saved reports.
 
-## Start here: the control tower
+[Install BrambleRS](https://github.com/blackberrylabs/BrambleRS/releases) with the `.deb`, `.rpm` or AppImage for x86_64 Linux.
 
-**[Blackberrylabs](https://github.com/blackberrylabs/blackberrylabs)** — one screen that says what is wrong on your machine on the AI side, most serious first — *act now · review · good to know · information* — and opens the right tool at the right place. Install it, then whichever modules you want; it works with any subset and shows the others as available.
+## The six modules
 
-[Get it](https://github.com/blackberrylabs/blackberrylabs/releases) — `.deb`, `.rpm`, AppImage.
+| Module | Question |
+|---|---|
+| **Permitt** | What each AI assistant may do without asking, and which setting says so |
+| **MCProster** | Which MCP servers are declared, once per server, with duplicates, clear secrets and dead commands |
+| **Linstruct** | Which instruction files each host would load, in which order, and what it would drop |
+| **Cleanator** | What AI tooling left on the disk, and what could go |
+| **Billfold** | Which accounts and keys this machine holds, and how many tokens each host burned |
+| **Lastrun** | What the agents actually ran, created, edited or deleted, session by session |
 
-## The modules
+## The promises
 
-| | Verb | What it answers |
-|---|---|---|
-| **[Permitt](https://github.com/blackberrylabs/permitt)** | inspect | What each AI assistant may do without asking — run commands, edit files, reach the network, call MCP tools — and which setting, in which file, says so. 16 hosts. Shell start-up files checked for bypass flags. |
-| **[MCProster](https://github.com/blackberrylabs/mcproster)** | inventory | Every MCP server declared on the machine, once, with the hosts and files that declare it — duplicates, secrets in clear, missing commands, skipped confirmations, what each server costs in the model's context. |
-| **[Cleanator](https://github.com/blackberrylabs/cleanator)** | clean | What AI tooling left on the disk — model stores, caches, build outputs, abandoned environments — and what could go, as a script you read and run yourself. Never deletes anything. |
-
-## The promises, the same for every tool
-
-- **Read-only.** No file is written outside the tool's own preferences (and, for the tower, its saved reports).
+- **Read-only.** No file is written outside `~/.config/bramblers/settings.json` and the saved reports in `~/.local/state/bramblers/`.
 - **No network.** Nothing leaves the machine; links are shown, never followed.
 - **Secrets masked** the moment they are read.
 - **Actions shown, never run.** Each finding says what you could do; you do it.
-- **Every rule sourced.** The documentation sentence, the source line, or the observation behind each claim is in the tool.
+- **Every rule sourced.** The documentation sentence, the source line, or the observation behind each claim is in the module.
 
 ## Under the hood
 
-Three shared crates, all Rust, all MIT: **[bbl-hostrules](https://github.com/blackberrylabs/bbl-hostrules)** (where each AI assistant keeps its files, how to read them without writing), **[bbl-ui](https://github.com/blackberrylabs/bbl-ui)** (the shared face), **[bbl-report](https://github.com/blackberrylabs/bbl-report)** (the contract between the tower and its modules). Adding a module to the family = a binary that answers `report` and one declarative sheet in the tower.
+One Rust workspace, MIT: `bramblers-core`, `bramblers-report`, `bramblers-hostrules`, `bramblers-ui`, the iced app and six module cores. The source is [blackberrylabs/BrambleRS](https://github.com/blackberrylabs/BrambleRS).
 
-By [Alexandre Do](https://github.com/Nimeria2026). Issues and rules welcome in each repository.
+The old tower, the six module repositories, the three foundation crates and the template are archived. Their releases stay downloadable.
+
+By [Alexandre Do](https://github.com/Nimeria2026). Issues and rules are welcome in the BrambleRS repository.
