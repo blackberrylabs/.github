@@ -19,7 +19,7 @@ One program, six modules, one install. BrambleRS reads the configuration, instru
 
 ## The promises
 
-- **Read-only.** No file is written outside `~/.config/bramblers/settings.json` and the saved reports in `~/.local/state/bramblers/`.
+- **Read-only.** The only writes are its own settings under `~/.config/bramblers/`, the saved reports and the cleanup script Cleanator offers to save under `~/.local/state/bramblers/`.
 - **No network.** Nothing leaves the machine; links are shown, never followed.
 - **Secrets masked** the moment they are read.
 - **Actions shown, never run.** Each finding says what you could do; you do it.
@@ -27,7 +27,7 @@ One program, six modules, one install. BrambleRS reads the configuration, instru
 
 ## Under the hood
 
-One Rust workspace, MIT: `bramblers-core`, `bramblers-report`, `bramblers-hostrules`, `bramblers-ui`, the iced app and six module cores. The source is [blackberrylabs/BrambleRS](https://github.com/blackberrylabs/BrambleRS).
+One Rust workspace, MIT: `bramblers-core`, `bramblers-report`, `bramblers-hostrules`, `bramblers-ui`, the iced app, six module cores and their six screens. The source is [blackberrylabs/BrambleRS](https://github.com/blackberrylabs/BrambleRS).
 
 The old tower, the six module repositories, the three foundation crates and the template were
 removed on 2026-11-07. BrambleRS is the only source and the only download.

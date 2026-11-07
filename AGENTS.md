@@ -5,16 +5,16 @@ Dépôt `.github` de l'organisation `blackberrylabs`. Seul `profile/README.md` s
 
 ## Au démarrage de chaque session
 
-1. Lis `profile/README.md` et `README.md`, puis `Blackberrylabs/PLAN.md` (ce dépôt n'a ni BRIEF, ni PLAN, ni JOURNAL : son état suit celui de la tour).
+1. Lis `profile/README.md` et `README.md`, puis `BrambleRS/PLAN.md` (ce dépôt n'a ni BRIEF, ni PLAN, ni JOURNAL : son état suit celui de BrambleRS).
 2. Lance `git status -sb` et `git log --oneline -5`.
 
 ## Règles propres au dépôt
 
-- Le profil présente la famille : la phrase de famille, puis une entrée par module. Un module nouveau y entre le jour de sa première release.
-- Descriptions, topics et pages d'accueil des dépôts viennent de `Blackberrylabs/packaging/github_meta.sh` (source de vérité). Modifie-les là d'abord ; relancer le script modifie GitHub et demande l'accord d'Alexandre.
+- Le profil présente BrambleRS : phrase d'accroche, installation, tableau des six modules, promesses. Un module nouveau y entre le jour de sa première release.
+- Descriptions, topics et page d'accueil des dépôts se règlent à la main avec `gh repo edit` et `gh api` (le script `github_meta.sh` des douze dépôts est supprimé). Toute modification de GitHub demande l'accord d'Alexandre.
 - Aucun nom autre qu'Alexandre Do, aucune information personnelle. `00_cadrage/` (messages de commit préparés, archives) est hors git.
 
-<!-- BLOC COMMUN v1, 2026-10-26. Identique dans les douze dépôts de la série. Le modifier partout ou nulle part (Logiciels/PASSATION.md, section « Maintenir »). -->
+<!-- BLOC COMMUN v1, 2026-10-26. Écrit pour les douze dépôts de la série, supprimée le 2026-11-07 ; il reste comme historique. Le modifier partout ou nulle part (Logiciels/PASSATION.md, section « Maintenir »). -->
 
 ## Pour qui tu travailles
 
@@ -32,7 +32,7 @@ Alexandre Do pilote et décide, tu exécutes. Réponds-lui en français courant 
 L'accord est un « go » ou un « oui » écrit dans la conversation, que tu consignes au JOURNAL avec la date. Un silence n'est pas un oui, et l'accord donné pour une chose ne vaut pas pour la suivante. Tu prépares, tu montres la commande exacte et ce qu'elle fera, puis tu attends.
 
 1. `git push`, sous toute forme (branche, tags, `--force`).
-2. Créer ou pousser un tag, publier une release, modifier un dépôt GitHub ou ses métadonnées (`gh`, `packaging/github_meta.sh`), `cargo publish`.
+2. Créer ou pousser un tag, publier une release, modifier un dépôt GitHub ou ses métadonnées (`gh`), `cargo publish`.
 3. Supprimer un fichier ou un dossier, sorties générées comprises (`target/`, `dist/`, `00_cadrage/`, fichiers temporaires). Cela couvre `rm`, `git clean`, `git reset --hard`, `git branch -D` et `find -delete`. Dis quoi, combien et pourquoi, puis attends.
 4. Créer, modifier ou arrêter ce qui tourne tout seul : minuterie systemd, cron, service.
 5. Réécrire l'historique d'un commit déjà poussé (`rebase`, `commit --amend`).
@@ -80,6 +80,8 @@ Restent libres : lire, chercher, calculer par script, écrire dans le dépôt, `
 - Les dépendances `bbl-*` sont fixées par tag git dans `Cargo.toml`. Changer une fondation : la corriger à sa source, la tagger (avec accord), puis faire passer les modules à ce tag un par un, en vérifiant que leurs sorties restent identiques.
 
 ## La série en un coup d'œil
+
+> **Série supprimée le 2026-11-07.** Les dépôts ci-dessous ont été supprimés avec leurs releases ; leur historique vit dans BrambleRS. Le tableau reste comme historique ; le produit est BrambleRS.
 
 Dépôts frères dans `/home/nushoko/Bureau/Logiciels/`, publics sous `github.com/blackberrylabs`. Rust, iced 0.13.1, licence MIT. Un outil, un verbe : un nouveau constat va dans l'outil existant, un nouveau verbe fait un nouvel outil. La tour rassemble sans absorber : elle lance les modules, lit leurs rapports `bbl-report/1`, assemble, trie, ouvre. Chaque module reste complet et installable seul.
 
