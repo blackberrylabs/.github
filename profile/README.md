@@ -29,6 +29,7 @@ One program, six modules, one install. BrambleRS reads the configuration, instru
 
 One Rust workspace, MIT: `bramblers-core`, `bramblers-report`, `bramblers-hostrules`, `bramblers-ui`, the iced app and six module cores. The source is [blackberrylabs/BrambleRS](https://github.com/blackberrylabs/BrambleRS).
 
-The old tower, the six module repositories, the three foundation crates and the template are archived. Their releases stay downloadable.
+The old tower, the six module repositories, the three foundation crates and the template were
+removed on 2026-11-07. BrambleRS is the only source and the only download.
 
 By [Alexandre Do](https://github.com/Nimeria2026). Issues and rules are welcome in the BrambleRS repository.
