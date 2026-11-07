@@ -10,16 +10,16 @@ One program, six modules, one install. BrambleRS reads the configuration, instru
 
 | Module | Question |
 |---|---|
-| **Permitt** | What each AI assistant may do without asking, and which setting says so |
-| **MCProster** | Which MCP servers are declared, once per server, with duplicates, clear secrets and dead commands |
-| **Linstruct** | Which instruction files each host would load, in which order, and what it would drop |
-| **Cleanator** | What AI tooling left on the disk, and what could go |
-| **Billfold** | Which accounts and keys this machine holds, and how many tokens each host burned |
-| **Lastrun** | What the agents actually ran, created, edited or deleted, session by session |
+| **Agent permissions** | What each AI assistant may do without asking, and which setting says so |
+| **MCP servers** | Which MCP servers are declared, once per server, with duplicates, clear secrets and dead commands |
+| **Instruction files** | Which instruction files each host would load, in which order, and what it would drop |
+| **Disk cleanup** | What AI tooling left on the disk, and what could go |
+| **Keys & spend** | Which accounts and keys this machine holds, and how many tokens each host burned |
+| **Activity** | What the agents actually ran, created, edited or deleted, session by session |
 
 ## The promises
 
-- **Read-only.** The only writes are its own settings under `~/.config/bramblers/`, the saved reports and the cleanup script Cleanator offers to save under `~/.local/state/bramblers/`.
+- **Read-only.** The only writes are its own settings under `~/.config/bramblers/`, the saved reports and the cleanup script the Disk cleanup tab offers to save under `~/.local/state/bramblers/`.
 - **No network of its own.** Nothing is sent anywhere; a link opens in your browser only when you click it.
 - **Secrets masked** the moment they are read.
 - **Actions shown, never run.** Each finding says what you could do; you do it.
